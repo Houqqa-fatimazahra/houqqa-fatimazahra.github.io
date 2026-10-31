@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fatima Zahra Houqqa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Élève ingénieure en Intelligence Artificielle et Data Science (EMSI, Rabat). LLMs, vision par ordinateur, Machine Learning. Recherche un stage PFE 2026–2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Noto+Sans+Arabic:wght@400;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: texte à gauche, portrait à droite (miroir en arabe), panneau de recherche sombre, puis sections en lignes. */
+:root{
+  --bg:#F4F5F8;
+  --surface:#FFFFFF;
+  --text:#0F1D3A;
+  --muted:#55607A;
+  --line:#DADFE8;
+  --accent:#B83A63;
+  --accent-strong:#962D50;
+  --accent-wash:#F7E4EA;
+  --link:#962D50;
+  --panel:#0F1D3A;
+  --panel-text:#FFFFFF;
+  --panel-muted:#B9C2D8;
+  --panel-line:#4A5878;
+  --panel-hover:#1D2D54;
+  --panel-card:#FFFFFF;
+  --panel-card-text:#0F1D3A;
+  --on-accent:#FFFFFF;
+  --marker:#FFE58A;
+  --marker-text:#0F1D3A;
+  --radius:10px;
+  --gutter:20px;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Public Sans","Segoe UI",system-ui,sans-serif;
+  --arabic:"Noto Sans Arabic","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1220;
+    --surface:#161D31;
+    --text:#E9EDF7;
+    --muted:#9FAAC6;
+    --line:#262F49;
+    --accent:#C2406C;
+    --accent-strong:#D8557F;
+    --accent-wash:#2A1A2C;
+    --link:#F296B5;
+    --panel:#161D31;
+    --panel-text:#F2F5FB;
+    --panel-muted:#A9B4CF;
+    --panel-line:#3A466A;
+    --panel-hover:#222B47;
+    --panel-card:#0D1220;
+    --panel-card-text:#E9EDF7;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1220;
+  --surface:#161D31;
+  --text:#E9EDF7;
+  --muted:#9FAAC6;
+  --line:#262F49;
+  --accent:#C2406C;
+  --accent-strong:#D8557F;
+  --accent-wash:#2A1A2C;
+  --link:#F296B5;
+  --panel:#161D31;
+  --panel-text:#F2F5FB;
+  --panel-muted:#A9B4CF;
+  --panel-line:#3A466A;
+  --panel-hover:#222B47;
+  --panel-card:#0D1220;
+  --panel-card-text:#E9EDF7;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+[hidden]{display:none !important}
+a{color:var(--link);text-underline-offset:3px}
+a:hover{color:var(--text)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+
+/* arabe : police, interligne, pas de tracking négatif */
+:lang(ar) body,:lang(ar) input,:lang(ar) button{font-family:var(--body),var(--arabic)}
+:lang(ar) h1,:lang(ar) h2,:lang(ar) h3,:lang(ar) .brand{font-family:var(--display),var(--arabic);letter-spacing:0}
+:lang(ar) body{line-height:1.85}
+:lang(ar) h1{line-height:1.15}
+
+/* en-tête */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px 20px;flex-wrap:wrap;padding-block:16px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--text);text-decoration:none}
+.tools{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px}
+.tools nav{display:flex;gap:16px;font-size:.95rem;flex-wrap:wrap}
+.tools nav a{color:var(--muted);text-decoration:none;padding:4px 0}
+.tools nav a:hover{color:var(--text);text-decoration:underline}
+.langs{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.langs button{font:inherit;font-size:.9rem;padding:6px 12px;border:0;background:transparent;color:var(--muted);cursor:pointer;min-height:36px}
+.langs button + button{border-inline-start:1px solid var(--line)}
+.langs button[aria-pressed="true"]{background:var(--text);color:var(--bg)}
+.theme{font:inherit;font-size:.9rem;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--text);cursor:pointer;min-height:36px}
+.theme:hover,.langs button:hover{border-color:var(--muted)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;padding:14px 0 34px;align-items:center}
+.hero-photo{width:min(190px,56vw);aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,9vw,4.6rem);line-height:1;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
+.lead{font-size:1.12rem;max-width:34em;margin:0 0 22px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 18px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.97rem;border:2px solid var(--text);color:var(--text);background:transparent;overflow-wrap:anywhere}
+.btn:hover{background:var(--text);color:var(--bg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-strong);border-color:var(--accent-strong);color:var(--on-accent)}
+
+/* recherche */
+.ask{background:var(--panel);color:var(--panel-text);border-radius:14px;padding:22px var(--gutter) 24px;margin:0 0 56px}
+.ask h2{font-family:var(--display);font-size:1.5rem;line-height:1.2;margin:0 0 6px;font-weight:700}
+.ask p.sub{margin:0 0 16px;color:var(--panel-muted);font-size:.95rem;max-width:44em}
+.ask form{display:flex;gap:10px;flex-wrap:wrap}
+.ask label{position:absolute;inset-inline-start:-9999px}
+.ask input[type=search]{flex:1 1 220px;min-width:0;font:inherit;font-size:1rem;padding:12px 14px;border-radius:8px;border:2px solid transparent;background:var(--panel-card);color:var(--panel-card-text)}
+.ask input[type=search]::placeholder{color:#7A849E}
+.ask button.go{font:inherit;font-weight:600;padding:12px 20px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);cursor:pointer}
+.ask button.go:hover{background:var(--accent-strong)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font:inherit;font-size:.9rem;padding:6px 12px;border-radius:999px;border:1px solid var(--panel-line);background:transparent;color:var(--panel-text);cursor:pointer}
+.chip:hover{background:var(--panel-hover);border-color:var(--panel-muted)}
+#results{margin-top:18px;display:grid;gap:10px}
+.result{background:var(--panel-card);color:var(--panel-card-text);border-radius:10px;padding:14px 16px}
+.result .src{display:inline-block;font-size:.82rem;font-weight:600;color:var(--link);background:var(--accent-wash);padding:2px 9px;border-radius:999px;margin-bottom:6px}
+.result p{margin:0}
+mark{background:var(--marker);color:var(--marker-text);padding:0 2px;border-radius:3px}
+.note{font-size:.9rem;color:var(--panel-muted);margin:2px 0 0}
+.note.empty{color:var(--panel-text)}
+
+/* sections */
+section.block{padding:0 0 56px}
+h2.title{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.1;letter-spacing:-.01em;margin:0 0 22px;text-wrap:balance}
+.project{display:grid;grid-template-columns:minmax(0,1fr);gap:6px 28px;padding:22px 0;border-top:1px solid var(--line)}
+.project:first-of-type{border-top:0;padding-top:0}
+.project .meta{color:var(--muted);font-size:.93rem}
+.project h3{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.25;margin:0 0 6px}
+.project p{margin:0 0 8px;max-width:46em}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.tags li{font-size:.85rem;padding:3px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.project .links{margin-top:10px;display:flex;gap:16px;font-weight:600;font-size:.95rem}
+.project.featured{background:var(--accent-wash);border-radius:12px;padding:22px var(--gutter);border-top:0;margin-bottom:12px}
+.status{display:inline-block;font-size:.85rem;font-weight:600;background:var(--accent);color:var(--on-accent);padding:2px 10px;border-radius:999px;margin-bottom:8px}
+
+dl.skills{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px 28px}
+dl.skills dt{font-weight:600;margin-top:12px}
+dl.skills dt:first-child{margin-top:0}
+dl.skills dd{margin:0;color:var(--muted)}
+
+.rows{display:grid;gap:18px}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:2px 28px}
+.row .when{color:var(--muted);font-size:.93rem}
+.row strong{font-weight:600}
+.row .org{color:var(--muted)}
+
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px var(--gutter);margin-bottom:56px}
+.contact p{margin:0 0 16px;max-width:40em}
+footer{padding:0 0 36px;color:var(--muted);font-size:.9rem}
+
+@media (min-width:720px){
+  :root{--gutter:32px}
+  .hero{grid-template-columns:minmax(0,1fr) 250px;gap:48px;padding:28px 0 44px}
+  .hero-photo{grid-column:2;grid-row:1;width:250px}
+  .ask{padding:30px 36px 32px}
+  .project{grid-template-columns:190px minmax(0,1fr)}
+  .project.featured{padding:26px 28px}
+  dl.skills{grid-template-columns:240px minmax(0,1fr)}
+  dl.skills dt{margin-top:0}
+  dl.skills dd{margin-bottom:6px}
+  .row{grid-template-columns:190px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="brand" href="#">Fatima Zahra Houqqa</a>
+    <div class="tools">
+      <nav data-i18n-aria="nav_label">
+        <a href="#projets" data-i18n="nav_projects"></a>
+        <a href="#parcours" data-i18n="nav_background"></a>
+        <a href="#contact" data-i18n="nav_contact"></a>
+      </nav>
+      <div class="langs" role="group" data-i18n-aria="lang_label">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button>
+      </div>
+      <button type="button" class="theme" id="theme"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="titre">
+      <div class="hero-photo"><img src="photo.jpg" alt="Fatima Zahra Houqqa" width="640" height="800"></div>
+      <div>
+        <h1 id="titre">Fatima Zahra Houqqa</h1>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="actions">
+          <a class="btn primary" href="CV_Fatima_Zahra_Houqqa.pdf" data-i18n="cv"></a>
+          <a class="btn" href="mailto:Fatmazahrahouqqa@gmail.com" data-i18n="email"></a>
+          <a class="btn" id="gh-hero" href="#" hidden data-i18n="github"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ask" aria-labelledby="ask-title">
+      <h2 id="ask-title" data-i18n="ask_title"></h2>
+      <p class="sub" data-i18n="ask_sub"></p>
+      <form id="ask-form" role="search">
+        <label for="q" data-i18n="ask_label"></label>
+        <input id="q" type="search" data-i18n-ph="ask_ph" autocomplete="off">
+        <button class="go" type="submit" data-i18n="ask_btn"></button>
+      </form>
+      <div class="chips" id="chips" data-i18n-aria="chips_label"></div>
+      <div id="results" aria-live="polite"></div>
+    </section>
+
+    <section class="block" id="projets" aria-labelledby="t-projets">
+      <h2 class="title" id="t-projets" data-i18n="t_projects"></h2>
+      <div id="projects"></div>
+    </section>
+
+    <section class="block" aria-labelledby="t-skills">
+      <h2 class="title" id="t-skills" data-i18n="t_skills"></h2>
+      <dl class="skills" id="skills"></dl>
+    </section>
+
+    <section class="block" id="parcours" aria-labelledby="t-parcours">
+      <h2 class="title" id="t-parcours" data-i18n="t_background"></h2>
+      <div class="rows" id="rows"></div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="t-contact">
+      <h2 class="title" id="t-contact" data-i18n="t_contact"></h2>
+      <p data-i18n="contact_p"></p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:Fatmazahrahouqqa@gmail.com">Fatmazahrahouqqa@gmail.com</a>
+        <a class="btn" href="https://linkedin.com/in/houqqa-fatimazahra">LinkedIn</a>
+        <a class="btn" id="gh-contact" href="#" hidden>GitHub</a>
+        <a class="btn" href="CV_Fatima_Zahra_Houqqa.pdf" data-i18n="cv"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer data-i18n="footer"></footer>
+</div>
+
+<script>
+/* ---- À renseigner ---- */
+const GITHUB_USER = "houqqa-fatimazahra";
+
+/* ---- Textes de l'interface ---- */
+const UI = {
+  fr: {
+    title: "Fatima Zahra Houqqa, ingénieure IA",
+    desc: "Élève ingénieure en Intelligence Artificielle et Data Science (EMSI, Rabat). LLMs, vision par ordinateur, Machine Learning. Recherche un stage PFE 2026–2027.",
+    nav_label: "Navigation principale", lang_label: "Langue",
+    nav_projects: "Projets", nav_background: "Parcours", nav_contact: "Contact",
+    theme_dark: "Mode sombre", theme_light: "Mode clair",
+    lead: "Élève ingénieure en Intelligence Artificielle et Data Science à l'EMSI, Rabat. Je conçois des assistants basés sur les LLMs et des modèles de vision par ordinateur, et je cherche un stage de fin d'études (PFE) en IA pour 2026–2027.",
+    cv: "Télécharger mon CV", email: "Écrire un email", github: "Voir mon GitHub",
+    ask_title: "Cherchez dans mes projets",
+    ask_sub: "Tapez un mot-clé ou une question. La page retrouve les passages les plus proches dans mon CV et mes projets, avec leur source. C'est une recherche par mots-clés qui tourne dans votre navigateur, sans modèle de langage.",
+    ask_label: "Votre question", ask_ph: "Par exemple : LLM, RAG, Java, vision par ordinateur", ask_btn: "Chercher",
+    chips_label: "Exemples de recherches",
+    chips: ["LLMs", "RAG", "Java", "Vision par ordinateur", "Explicabilité", "Stage PFE"],
+    count: n => n + (n > 1 ? " passages trouvés" : " passage trouvé") + ", du plus proche au moins proche.",
+    none: q => "Aucun passage trouvé pour « " + q + " ». Essayez : LLM, RAG, Java, PyTorch, vision par ordinateur, stage.",
+    t_projects: "Projets", t_skills: "Compétences", t_background: "Parcours", t_contact: "Contact",
+    contact_p: "Je cherche un stage PFE en IA pour l'année 2026–2027. Le plus simple est de m'écrire ou de m'envoyer un message sur LinkedIn.",
+    footer: "Rabat, Maroc", repo_link: "Voir le code sur GitHub"
+  },
+  en: {
+    title: "Fatima Zahra Houqqa, AI engineer",
+    desc: "Engineering student in Artificial Intelligence and Data Science (EMSI, Rabat). LLMs, computer vision, Machine Learning. Looking for a PFE internship for 2026–2027.",
+    nav_label: "Main navigation", lang_label: "Language",
+    nav_projects: "Projects", nav_background: "Background", nav_contact: "Contact",
+    theme_dark: "Dark mode", theme_light: "Light mode",
+    lead: "Engineering student in Artificial Intelligence and Data Science at EMSI, Rabat. I build assistants based on LLMs and computer vision models, and I'm looking for a final-year internship (PFE) in AI for 2026–2027.",
+    cv: "Download my CV", email: "Send an email", github: "View my GitHub",
+    ask_title: "Search my projects",
+    ask_sub: "Type a keyword or a question. The page finds the closest passages in my CV and projects, with their source. It is a keyword search that runs in your browser, with no language model.",
+    ask_label: "Your question", ask_ph: "For example: LLM, RAG, Java, computer vision", ask_btn: "Search",
+    chips_label: "Example searches",
+    chips: ["LLMs", "RAG", "Java", "Computer vision", "Explainability", "PFE internship"],
+    count: n => n + (n > 1 ? " passages found" : " passage found") + ", closest first.",
+    none: q => "No passage found for “" + q + "”. Try: LLM, RAG, Java, PyTorch, computer vision, internship.",
+    t_projects: "Projects", t_skills: "Skills", t_background: "Background", t_contact: "Contact",
+    contact_p: "I'm looking for a PFE internship in AI for 2026–2027. The easiest way is to email me or send a message on LinkedIn.",
+    footer: "Rabat, Morocco", repo_link: "View the code on GitHub"
+  },
+  ar: {
+    title: "Fatima Zahra Houqqa، مهندسة في الذكاء الاصطناعي",
+    desc: "طالبة مهندسة في الذكاء الاصطناعي وعلوم البيانات (EMSI الرباط). LLMs والرؤية الحاسوبية والتعلّم الآلي. تبحث عن تدريب PFE للسنة 2026–2027.",
+    nav_label: "التنقل الرئيسي", lang_label: "اللغة",
+    nav_projects: "المشاريع", nav_background: "المسار", nav_contact: "التواصل",
+    theme_dark: "الوضع الداكن", theme_light: "الوضع الفاتح",
+    lead: "طالبة مهندسة في الذكاء الاصطناعي وعلوم البيانات بالمدرسة المغربية لعلوم المهندس (EMSI) بالرباط. أصمّم مساعدين يعتمدون على نماذج اللغة الكبيرة (LLMs) ونماذج الرؤية الحاسوبية، وأبحث عن تدريب نهاية الدراسة (PFE) في الذكاء الاصطناعي للسنة الدراسية 2026–2027.",
+    cv: "تحميل السيرة الذاتية", email: "إرسال بريد إلكتروني", github: "حسابي على GitHub",
+    ask_title: "ابحث في مشاريعي",
+    ask_sub: "اكتب كلمة مفتاحية أو سؤالاً. تعثر الصفحة على أقرب الفقرات في سيرتي الذاتية ومشاريعي مع ذكر مصدرها. هذا بحث بالكلمات المفتاحية يعمل داخل متصفحك، دون نموذج لغوي.",
+    ask_label: "سؤالك", ask_ph: "مثلاً: LLM أو RAG أو Java أو الرؤية الحاسوبية", ask_btn: "بحث",
+    chips_label: "أمثلة للبحث",
+    chips: ["LLMs", "RAG", "Java", "الرؤية الحاسوبية", "قابلية التفسير", "تدريب PFE"],
+    count: n => "تم العثور على " + n + " " + (n > 1 ? "فقرات" : "فقرة") + "، من الأقرب إلى الأبعد.",
+    none: q => "لم يتم العثور على أي فقرة لـ «" + q + "». جرّب: LLM أو RAG أو Java أو PyTorch أو الرؤية الحاسوبية أو التدريب.",
+    t_projects: "المشاريع", t_skills: "المهارات", t_background: "المسار", t_contact: "التواصل",
+    contact_p: "أبحث عن تدريب نهاية الدراسة (PFE) في الذكاء الاصطناعي للسنة 2026–2027. أسهل طريقة هي مراسلتي عبر البريد الإلكتروني أو برسالة على LinkedIn.",
+    footer: "الرباط، المغرب", repo_link: "عرض الشيفرة على GitHub"
+  }
+};
+
+/* ---- Projets : "repo" = nom du dépôt GitHub (vide = aucun lien affiché) ---- */
+const PROJECTS = [
+  {
+    featured: true, tags: ["n8n", "LLM", "RAG", "Google Sheets", "Gmail"], repo: "",
+    status: { fr: "En cours", en: "In progress", ar: "قيد الإنجاز" },
+    meta: { fr: "Projet personnel, 2026", en: "Personal project, 2026", ar: "مشروع شخصي، 2026" },
+    title: {
+      fr: "Agent IA et RAG pour emails de prospection (n8n)",
+      en: "AI agent and RAG for personalized prospecting emails (n8n)",
+      ar: "وكيل ذكاء اصطناعي وRAG لرسائل استكشاف العملاء المخصّصة (n8n)"
+    },
+    text: {
+      fr: "Un workflow n8n où un agent IA (LLM) s'appuie sur un RAG pour rédiger des emails de prospection personnalisés à partir d'une base de connaissances, sans prix ni faits inventés. Des contrôles automatiques (format JSON, longueur, montants vérifiés) et une validation humaine précèdent tout envoi.",
+      en: "An n8n workflow where an AI agent (LLM) relies on a RAG to write personalized prospecting emails from a knowledge base, without invented prices or facts. Automatic checks (JSON format, length, verified amounts) and human approval come before anything is sent.",
+      ar: "سير عمل n8n يعتمد فيه وكيل ذكاء اصطناعي (LLM) على RAG لكتابة رسائل بريد إلكتروني مخصّصة لاستكشاف العملاء انطلاقاً من قاعدة معرفة، دون اختلاق أسعار أو معلومات. تسبق أي إرسال فحوصات تلقائية (صيغة JSON، الطول، التحقق من المبالغ) وموافقة بشرية."
+    }
+  },
+  {
+    tags: ["Python", "LLMs", "FastAPI", "SQLite", "Random Forest", "SHAP"], repo: "",
+    meta: { fr: "Stage, Secrétariat d'État, 2026", en: "Internship, State Secretariat, 2026", ar: "تدريب، كتابة الدولة، 2026" },
+    title: {
+      fr: "Assistant intelligent pour la gestion du parc informatique",
+      en: "Intelligent assistant for IT equipment management",
+      ar: "مساعد ذكي لتدبير المعدات المعلوماتية"
+    },
+    text: {
+      fr: "Un assistant conversationnel basé sur les LLMs répond aux employés sur les équipements, garanties et stocks. Il interroge une API FastAPI par function calling pour s'appuyer sur des données réelles et limiter les hallucinations. Un modèle Random Forest, interprété avec SHAP, priorise le renouvellement du matériel (MAE 4,23 ; R² 0,94 sur données synthétiques).",
+      en: "A conversational assistant based on LLMs answers employees about equipment, warranties and stock. It queries a FastAPI API through function calling to rely on real data and limit hallucinations. A Random Forest model, interpreted with SHAP, prioritizes hardware renewal (MAE 4.23; R² 0.94 on synthetic data).",
+      ar: "يجيب مساعد محادثي مبني على LLMs الموظفين عن المعدات والضمانات والمخزون. يستعلم من واجهة FastAPI عبر استدعاء الدوال (function calling) ليعتمد على بيانات حقيقية ويحدّ من الهلوسة. ويحدّد نموذج Random Forest، مفسَّراً بواسطة SHAP، أولويات تجديد المعدات (MAE ‏4.23؛ R² ‏0.94 على بيانات اصطناعية)."
+    }
+  },
+  {
+    tags: ["Python", "PyTorch", "U-Net"], repo: "",
+    meta: { fr: "EMSI", en: "EMSI", ar: "EMSI" },
+    title: {
+      fr: "Segmentation de tumeurs cérébrales sur IRM (BraTS 2020)",
+      en: "Brain tumor segmentation on MRI (BraTS 2020)",
+      ar: "تجزئة أورام الدماغ في صور الرنين المغناطيسي (BraTS 2020)"
+    },
+    text: {
+      fr: "Un U-Net multi-classes entraîné sur 4 modalités IRM, avec séparation des données par patient pour éviter les fuites. Dice d'environ 0,80 en validation et 0,53 en test : preuve de concept sur un sous-ensemble réduit.",
+      en: "A multi-class U-Net trained on 4 MRI modalities, with data split by patient to avoid leakage. Dice of about 0.80 in validation and 0.53 in test: a proof of concept on a reduced subset.",
+      ar: "نموذج U-Net متعدد الفئات مدرَّب على 4 أنماط من صور الرنين المغناطيسي، مع فصل البيانات حسب المريض لتفادي تسرّبها. معامل Dice يقارب 0.80 في التحقق و0.53 في الاختبار: إثبات مفهوم على مجموعة فرعية صغيرة."
+    }
+  },
+  {
+    tags: ["Python", "PyTorch", "OpenCV", "Grad-CAM", "Flask"], repo: "",
+    meta: { fr: "Projet de vision par ordinateur", en: "Computer vision project", ar: "مشروع في الرؤية الحاسوبية" },
+    title: {
+      fr: "Détection de dommages automobiles et estimation du coût",
+      en: "Car damage detection and cost estimation",
+      ar: "اكتشاف أضرار السيارات وتقدير التكلفة"
+    },
+    text: {
+      fr: "Un EfficientNet-B0 entraîné par transfert d'apprentissage atteint 91 % de précision en validation. Grad-CAM explique chaque prédiction, dans une application Flask qui estime le coût et propose un chatbot d'aide.",
+      en: "An EfficientNet-B0 trained with transfer learning reaches 91% validation accuracy. Grad-CAM explains each prediction, in a Flask application that estimates the cost and offers a help chatbot.",
+      ar: "يبلغ نموذج EfficientNet-B0 المدرَّب بالتعلّم بالنقل دقة 91% في التحقق. ويشرح Grad-CAM كل تنبؤ داخل تطبيق Flask يقدّر التكلفة ويوفّر روبوت محادثة للمساعدة."
+    }
+  },
+  {
+    tags: ["Python", "Keras", "TensorFlow", "OpenCV"], repo: "",
+    meta: {
+      fr: "ESIAS, PFE Technicien Spécialisé, 2025",
+      en: "ESIAS, Specialized Technician final project, 2025",
+      ar: "ESIAS، مشروع نهاية التكوين لتقني متخصص، 2025"
+    },
+    title: {
+      fr: "Classification d'images de dattes par CNN",
+      en: "Date image classification with a CNN",
+      ar: "تصنيف صور التمور باستخدام CNN"
+    },
+    text: {
+      fr: "Un modèle MobileNetV2 en équipe de 3 : j'ai pris en charge le prétraitement, l'entraînement, l'évaluation et l'interface. Projet soutenu en 2025.",
+      en: "A MobileNetV2 model built in a team of 3: I handled preprocessing, training, evaluation and the interface. Defended in 2025.",
+      ar: "نموذج MobileNetV2 أُنجز ضمن فريق من 3 أشخاص: تكفّلتُ بالمعالجة المسبقة والتدريب والتقييم والواجهة. نوقش المشروع سنة 2025."
+    }
+  },
+  {
+    tags: ["RSA", "Blockchain"], repo: "",
+    meta: {
+      fr: "FST d'Errachidia, PFE Licence",
+      en: "FST Errachidia, Bachelor's final project",
+      ar: "كلية العلوم والتقنيات بالراشيدية، مشروع نهاية الإجازة"
+    },
+    title: {
+      fr: "Système de vote électronique sécurisé",
+      en: "Secure electronic voting system",
+      ar: "نظام تصويت إلكتروني آمن"
+    },
+    text: {
+      fr: "Un système de vote reposant sur le chiffrement RSA et la blockchain pour garantir la transparence et prévenir la fraude. Conception, tests et présentation en équipe.",
+      en: "A voting system based on RSA encryption and blockchain to guarantee transparency and prevent fraud. Design, tests and presentation in a team.",
+      ar: "نظام تصويت يعتمد على التشفير RSA وتقنية البلوكشين لضمان الشفافية ومنع التزوير. تصميم واختبار وعرض ضمن فريق."
+    }
+  }
+];
+
+const SKILLS = [
+  { dt: { fr: "IA générative", en: "Generative AI", ar: "الذكاء الاصطناعي التوليدي" },
+    dd: {
+      fr: "LLMs, function calling, agents IA et RAG (projet en cours), assistants conversationnels",
+      en: "LLMs, function calling, AI agents and RAG (project in progress), conversational assistants",
+      ar: "LLMs، استدعاء الدوال (function calling)، وكلاء الذكاء الاصطناعي وRAG (مشروع قيد الإنجاز)، المساعدون المحادثيون"
+    } },
+  { dt: { fr: "Machine Learning et Deep Learning", en: "Machine Learning and Deep Learning", ar: "التعلّم الآلي والتعلّم العميق" },
+    dd: { fr: "Python, PyTorch, TensorFlow, Keras, Scikit-learn, Random Forest, U-Net, CNN, SHAP",
+          en: "Python, PyTorch, TensorFlow, Keras, Scikit-learn, Random Forest, U-Net, CNN, SHAP",
+          ar: "Python, PyTorch, TensorFlow, Keras, Scikit-learn, Random Forest, U-Net, CNN, SHAP" } },
+  { dt: { fr: "Vision par ordinateur", en: "Computer vision", ar: "الرؤية الحاسوبية" },
+    dd: { fr: "OpenCV, EfficientNet, MobileNetV2, Grad-CAM, segmentation d'images médicales",
+          en: "OpenCV, EfficientNet, MobileNetV2, Grad-CAM, medical image segmentation",
+          ar: "OpenCV, EfficientNet, MobileNetV2, Grad-CAM، تجزئة الصور الطبية" } },
+  { dt: { fr: "Langages et data", en: "Languages and data", ar: "اللغات والبيانات" },
+    dd: { fr: "Python, Java, SQL, PHP, JavaScript, Pandas, NumPy, Power BI",
+          en: "Python, Java, SQL, PHP, JavaScript, Pandas, NumPy, Power BI",
+          ar: "Python, Java, SQL, PHP, JavaScript, Pandas, NumPy, Power BI" } },
+  { dt: { fr: "Big Data et MLOps", en: "Big Data and MLOps", ar: "البيانات الضخمة وMLOps" },
+    dd: { fr: "Apache Spark, MLOps", en: "Apache Spark, MLOps", ar: "Apache Spark, MLOps" } },
+  { dt: { fr: "Backend et API", en: "Backend and APIs", ar: "الواجهة الخلفية وواجهات API" },
+    dd: { fr: "FastAPI, Flask, API REST, SQLAlchemy, SQLite, Laravel, Django",
+          en: "FastAPI, Flask, REST APIs, SQLAlchemy, SQLite, Laravel, Django",
+          ar: "FastAPI, Flask, REST API, SQLAlchemy, SQLite, Laravel, Django" } }
+];
+
+const ROWS = [
+  { when: { fr: "2026", en: "2026", ar: "2026" },
+    html: {
+      fr: "<strong>Stagiaire IA</strong>, <span class=\"org\">Secrétariat d'État chargé de l'Artisanat et de l'Économie Sociale et Solidaire, Rabat</span><br>Assistant conversationnel pour la gestion du parc informatique (voir projets).",
+      en: "<strong>AI intern</strong>, <span class=\"org\">State Secretariat for Handicrafts and the Social and Solidarity Economy, Rabat</span><br>Conversational assistant for IT equipment management (see projects).",
+      ar: "<strong>متدرّبة في الذكاء الاصطناعي</strong>، <span class=\"org\">كتابة الدولة المكلفة بالصناعة التقليدية والاقتصاد الاجتماعي والتضامني، الرباط</span><br>مساعد محادثي لتدبير المعدات المعلوماتية (انظر المشاريع)."
+    } },
+  { when: { fr: "2024", en: "2024", ar: "2024" },
+    html: {
+      fr: "<strong>Stagiaire Web et SEO</strong> (à distance), <span class=\"org\">LUZINE, agence web et UI/UX, France</span><br>Analyse de mots-clés, optimisation SEO, descriptions et visuels du portfolio de l'agence.",
+      en: "<strong>Web and SEO intern</strong> (remote), <span class=\"org\">LUZINE, web and UI/UX agency, France</span><br>Keyword analysis, SEO optimization, descriptions and visuals for the agency's project portfolio.",
+      ar: "<strong>متدرّبة في الويب وتحسين محركات البحث</strong> (عن بُعد)، <span class=\"org\">LUZINE، وكالة ويب وتصميم UI/UX، فرنسا</span><br>تحليل الكلمات المفتاحية، تحسين محركات البحث (SEO)، كتابة الأوصاف وتجهيز العناصر البصرية لمعرض أعمال الوكالة."
+    } },
+  { when: { fr: "2025 à aujourd'hui", en: "2025 to present", ar: "2025 إلى اليوم" },
+    html: {
+      fr: "<strong>Cycle ingénieur, 5<sup>e</sup> année</strong>, <span class=\"org\">EMSI, Rabat</span><br>Intelligence Artificielle et Data Science.",
+      en: "<strong>Engineering cycle, 5th year</strong>, <span class=\"org\">EMSI, Rabat</span><br>Artificial Intelligence and Data Science.",
+      ar: "<strong>السلك الهندسي، السنة الخامسة</strong>، <span class=\"org\">EMSI الرباط</span><br>الذكاء الاصطناعي وعلوم البيانات."
+    } },
+  { when: { fr: "2024 à 2025", en: "2024 to 2025", ar: "2024 إلى 2025" },
+    html: {
+      fr: "<strong>Licence en Génie Logiciel</strong> (en parallèle), <span class=\"org\">FST d'Errachidia</span>",
+      en: "<strong>Bachelor's in Software Engineering</strong> (in parallel), <span class=\"org\">FST Errachidia</span>",
+      ar: "<strong>الإجازة في هندسة البرمجيات</strong> (بالموازاة)، <span class=\"org\">كلية العلوم والتقنيات بالراشيدية</span>"
+    } },
+  { when: { fr: "2023 à 2025", en: "2023 to 2025", ar: "2023 إلى 2025" },
+    html: {
+      fr: "<strong>Technicien Spécialisé en Développement Informatique</strong>, <span class=\"org\">ESIAS</span>",
+      en: "<strong>Specialized Technician in IT Development</strong>, <span class=\"org\">ESIAS</span>",
+      ar: "<strong>تقني متخصص في التطوير المعلوماتي</strong>، <span class=\"org\">ESIAS</span>"
+    } },
+  { when: { fr: "2020 à 2023", en: "2020 to 2023", ar: "2020 إلى 2023" },
+    html: {
+      fr: "<strong>DEUST Mathématiques, Informatique, Physique</strong>, <span class=\"org\">FST d'Errachidia</span>",
+      en: "<strong>DEUST in Mathematics, Computer Science, Physics</strong>, <span class=\"org\">FST Errachidia</span>",
+      ar: "<strong>DEUST رياضيات، معلوميات، فيزياء</strong>، <span class=\"org\">كلية العلوم والتقنيات بالراشيدية</span>"
+    } },
+  { when: { fr: "Certifications", en: "Certifications", ar: "الشهادات" },
+    html: {
+      fr: "Oracle AI Database Certified Foundations Associate (Oracle, 2026)<br>Introduction to Big Data (UC San Diego, 2026)<br>Agile Project Management (Google, 2026)",
+      en: "Oracle AI Database Certified Foundations Associate (Oracle, 2026)<br>Introduction to Big Data (UC San Diego, 2026)<br>Agile Project Management (Google, 2026)",
+      ar: "Oracle AI Database Certified Foundations Associate (Oracle, 2026)<br>Introduction to Big Data (UC San Diego, 2026)<br>Agile Project Management (Google, 2026)"
+    } },
+  { when: { fr: "Langues", en: "Languages", ar: "اللغات" },
+    html: {
+      fr: "Arabe (langue maternelle), français (avancé), anglais (intermédiaire), allemand (élémentaire)",
+      en: "Arabic (native), French (advanced), English (intermediate), German (basic)",
+      ar: "العربية (اللغة الأم)، الفرنسية (متقدم)، الإنجليزية (متوسط)، الألمانية (أساسي)"
+    } }
+];
+
+/* Passages interrogeables : uniquement des faits présents dans le CV. */
+const CHUNKS = [
+  { tags: "spark mlops big data bigdata pipeline deploiement deployment production البيانات الضخمة",
+    src: { fr: "Compétences", en: "Skills", ar: "المهارات" },
+    text: {
+      fr: "Big Data et MLOps : Apache Spark, MLOps.",
+      en: "Big Data and MLOps: Apache Spark, MLOps.",
+      ar: "البيانات الضخمة وMLOps: Apache Spark, MLOps." } },
+  { tags: "rag retrieval agent agents ia ai llm n8n workflow وكيل وكلاء ذكاء",
+    src: { fr: "Agent IA et RAG (n8n)", en: "AI agent and RAG (n8n)", ar: "وكيل الذكاء الاصطناعي وRAG (n8n)" },
+    text: {
+      fr: "Un workflow n8n où un agent IA (LLM) s'appuie sur un RAG pour rédiger des emails personnalisés à partir d'une base de connaissances, sans prix ni faits inventés. Mise en œuvre en cours.",
+      en: "An n8n workflow where an AI agent (LLM) relies on a RAG to write personalized emails from a knowledge base, without invented prices or facts. Implementation in progress.",
+      ar: "سير عمل n8n يعتمد فيه وكيل ذكاء اصطناعي (LLM) على RAG لكتابة رسائل مخصّصة انطلاقاً من قاعدة معرفة، دون اختلاق أسعار أو معلومات. التنفيذ قيد الإنجاز." } },
+  { tags: "controle validation humaine fiabilite checks human reliability فحص موافقة",
+    src: { fr: "Agent IA et RAG (n8n)", en: "AI agent and RAG (n8n)", ar: "وكيل الذكاء الاصطناعي وRAG (n8n)" },
+    text: {
+      fr: "Contrôles automatiques (format JSON, longueur, montants vérifiés) et validation humaine avant tout envoi.",
+      en: "Automatic checks (JSON format, length, verified amounts) and human approval before anything is sent.",
+      ar: "فحوصات تلقائية (صيغة JSON، الطول، التحقق من المبالغ) وموافقة بشرية قبل أي إرسال." } },
+  { tags: "llm llms chatbot assistant conversationnel ia generative conversational مساعد محادثة",
+    src: { fr: "Stage, Secrétariat d'État (2026)", en: "Internship, State Secretariat (2026)", ar: "تدريب، كتابة الدولة (2026)" },
+    text: {
+      fr: "Assistant conversationnel basé sur les LLMs qui répond aux employés sur les équipements, garanties et stocks.",
+      en: "A conversational assistant based on LLMs that answers employees about equipment, warranties and stock.",
+      ar: "مساعد محادثي مبني على LLMs يجيب الموظفين عن المعدات والضمانات والمخزون." } },
+  { tags: "function calling api fastapi hallucination hallucinations llm الهلوسة",
+    src: { fr: "Stage, Secrétariat d'État (2026)", en: "Internship, State Secretariat (2026)", ar: "تدريب، كتابة الدولة (2026)" },
+    text: {
+      fr: "Connexion à une API FastAPI par function calling pour s'appuyer sur des données réelles et limiter les hallucinations.",
+      en: "Connection to a FastAPI API through function calling to rely on real data and limit hallucinations.",
+      ar: "الاتصال بواجهة FastAPI عبر استدعاء الدوال (function calling) للاعتماد على بيانات حقيقية والحدّ من الهلوسة." } },
+  { tags: "machine learning random forest explicabilite explicable explainable explainability shap interpretability تفسير",
+    src: { fr: "Stage, Secrétariat d'État (2026)", en: "Internship, State Secretariat (2026)", ar: "تدريب، كتابة الدولة (2026)" },
+    text: {
+      fr: "Modèle Random Forest pour prioriser le renouvellement du matériel, interprété avec SHAP (MAE 4,23 ; R² 0,94 sur données synthétiques).",
+      en: "Random Forest model to prioritize hardware renewal, interpreted with SHAP (MAE 4.23; R² 0.94 on synthetic data).",
+      ar: "نموذج Random Forest لتحديد أولويات تجديد المعدات، مفسَّر بواسطة SHAP (MAE ‏4.23؛ R² ‏0.94 على بيانات اصطناعية)." } },
+  { tags: "vision computer irm mri medical deep learning pytorch segmentation الرؤية الحاسوبية طبية",
+    src: { fr: "Segmentation BraTS 2020", en: "BraTS 2020 segmentation", ar: "تجزئة BraTS 2020" },
+    text: {
+      fr: "U-Net multi-classes sur 4 modalités IRM, avec séparation des données par patient pour éviter les fuites.",
+      en: "Multi-class U-Net on 4 MRI modalities, with data split by patient to avoid leakage.",
+      ar: "U-Net متعدد الفئات على 4 أنماط من صور الرنين المغناطيسي، مع فصل البيانات حسب المريض لتفادي التسرّب." } },
+  { tags: "resultats metriques evaluation results metrics نتائج",
+    src: { fr: "Segmentation BraTS 2020", en: "BraTS 2020 segmentation", ar: "تجزئة BraTS 2020" },
+    text: {
+      fr: "Dice d'environ 0,80 en validation et 0,53 en test : preuve de concept sur un sous-ensemble réduit.",
+      en: "Dice of about 0.80 in validation and 0.53 in test: a proof of concept on a reduced subset.",
+      ar: "معامل Dice يقارب 0.80 في التحقق و0.53 في الاختبار: إثبات مفهوم على مجموعة فرعية صغيرة." } },
+  { tags: "vision computer deep learning transfert transfer efficientnet resultats results الرؤية الحاسوبية",
+    src: { fr: "Dommages automobiles", en: "Car damage", ar: "أضرار السيارات" },
+    text: {
+      fr: "EfficientNet-B0 par transfert d'apprentissage : 91 % de précision en validation.",
+      en: "EfficientNet-B0 with transfer learning: 91% validation accuracy.",
+      ar: "EfficientNet-B0 بالتعلّم بالنقل: دقة 91% في التحقق." } },
+  { tags: "explicabilite explicable explainable explainability gradcam chatbot flask application تفسير",
+    src: { fr: "Dommages automobiles", en: "Car damage", ar: "أضرار السيارات" },
+    text: {
+      fr: "Grad-CAM pour expliquer les prédictions, dans une application Flask avec estimation du coût et chatbot d'aide.",
+      en: "Grad-CAM to explain predictions, in a Flask application with cost estimation and a help chatbot.",
+      ar: "Grad-CAM لشرح التنبؤات، داخل تطبيق Flask مع تقدير التكلفة وروبوت محادثة للمساعدة." } },
+  { tags: "vision computer cnn deep learning keras tensorflow equipe team الرؤية الحاسوبية",
+    src: { fr: "Classification de dattes", en: "Date classification", ar: "تصنيف التمور" },
+    text: {
+      fr: "MobileNetV2 : prétraitement, entraînement, évaluation et interface, en équipe de 3. Projet soutenu en 2025.",
+      en: "MobileNetV2: preprocessing, training, evaluation and interface, in a team of 3. Defended in 2025.",
+      ar: "MobileNetV2: المعالجة المسبقة والتدريب والتقييم والواجهة ضمن فريق من 3. نوقش المشروع سنة 2025." } },
+  { tags: "securite chiffrement cryptographie security encryption cryptography أمن تشفير",
+    src: { fr: "Vote électronique", en: "Electronic voting", ar: "التصويت الإلكتروني" },
+    text: {
+      fr: "Système de vote avec chiffrement RSA et blockchain pour garantir la transparence et prévenir la fraude.",
+      en: "Voting system with RSA encryption and blockchain to guarantee transparency and prevent fraud.",
+      ar: "نظام تصويت بتشفير RSA وبلوكشين لضمان الشفافية ومنع التزوير." } },
+  { tags: "langages programmation java python sql php javascript languages programming لغات برمجة",
+    src: { fr: "Compétences", en: "Skills", ar: "المهارات" },
+    text: {
+      fr: "Python, Java, SQL, PHP, JavaScript, Pandas, NumPy, Power BI.",
+      en: "Python, Java, SQL, PHP, JavaScript, Pandas, NumPy, Power BI.",
+      ar: "Python, Java, SQL, PHP, JavaScript, Pandas, NumPy, Power BI." } },
+  { tags: "deep learning machine learning frameworks bibliotheques libraries",
+    src: { fr: "Compétences", en: "Skills", ar: "المهارات" },
+    text: {
+      fr: "PyTorch, TensorFlow, Keras, Scikit-learn, OpenCV.",
+      en: "PyTorch, TensorFlow, Keras, Scikit-learn, OpenCV.",
+      ar: "PyTorch, TensorFlow, Keras, Scikit-learn, OpenCV." } },
+  { tags: "backend api web",
+    src: { fr: "Compétences", en: "Skills", ar: "المهارات" },
+    text: {
+      fr: "FastAPI, Flask, API REST, SQLAlchemy, SQLite, Laravel, Django.",
+      en: "FastAPI, Flask, REST APIs, SQLAlchemy, SQLite, Laravel, Django.",
+      ar: "FastAPI, Flask, REST API, SQLAlchemy, SQLite, Laravel, Django." } },
+  { tags: "stage pfe ecole ingenieur emsi etudes disponibilite internship school engineering studies تدريب",
+    src: { fr: "Formation", en: "Education", ar: "التكوين" },
+    text: {
+      fr: "Cycle ingénieur en 5e année, Intelligence Artificielle et Data Science, EMSI, Rabat. À la recherche d'un stage PFE en IA pour 2026–2027.",
+      en: "Engineering cycle, 5th year, Artificial Intelligence and Data Science, EMSI, Rabat. Looking for a PFE internship in AI for 2026–2027.",
+      ar: "السلك الهندسي، السنة الخامسة، الذكاء الاصطناعي وعلوم البيانات، EMSI الرباط. أبحث عن تدريب PFE في الذكاء الاصطناعي للسنة 2026–2027." } },
+  { tags: "certificat oracle google agile big data certificates certification شهادات",
+    src: { fr: "Certifications", en: "Certifications", ar: "الشهادات" },
+    text: {
+      fr: "Oracle AI Database Certified Foundations Associate (2026), Introduction to Big Data (UC San Diego, 2026), Agile Project Management (Google, 2026).",
+      en: "Oracle AI Database Certified Foundations Associate (2026), Introduction to Big Data (UC San Diego, 2026), Agile Project Management (Google, 2026).",
+      ar: "Oracle AI Database Certified Foundations Associate (2026), Introduction to Big Data (UC San Diego, 2026), Agile Project Management (Google, 2026)." } }
+];
+
+/* ---- Stockage léger (préférences seulement) ---- */
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+
+let lang = "fr";
+const root = document.documentElement;
+
+/* ---- Recherche ---- */
+const STOP_RAW = ("le la les de des du un une et en au aux pour sur avec ce ces que qui quoi dans par est sont avez vous je mon ma mes tu ton as a il elle on ou ne pas plus se sa son ses y d l c s j m n t qu quels quel quelle quelles " +
+  "the an of and in on for with to is are do you your have has what which how my i me it its at by from " +
+  "في من على إلى مع و عن هل ما ماذا كيف هذا هذه أو أن أنا هي هو").split(" ");
+const norm = s => s.normalize("NFD").replace(/[̀-ًͯ-ٰٟ]/g, "").toLowerCase()
+  .replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
+const STOP = new Set(STOP_RAW.map(norm));
+const stem = w => {
+  if (/^[؀-ۿ]/.test(w)) return (w.startsWith("ال") && w.length > 4) ? w.slice(2) : w;
+  return (w.length > 3 && w.endsWith("s")) ? w.slice(0, -1) : w;
+};
+const terms = s => norm(s).split(/[^\p{L}\p{N}]+/u).filter(w => w.length > 1 && !STOP.has(w)).map(stem);
+
+let docs = [], df = {};
+function buildDocs() {
+  docs = CHUNKS.map(c => ({
+    src: c.src[lang], text: c.text[lang],
+    set: new Set(terms(c.text[lang] + " " + c.tags + " " + c.src[lang]))
+  }));
+  df = {};
+  docs.forEach(d => d.set.forEach(t => { df[t] = (df[t] || 0) + 1; }));
+}
+function search(q) {
+  const qt = [...new Set(terms(q))];
+  if (!qt.length) return { qt, hits: [] };
+  const hits = docs.map(d => {
+    let s = 0;
+    qt.forEach(t => { if (d.set.has(t)) s += Math.log(1 + docs.length / df[t]); });
+    return { d, s };
+  }).filter(h => h.s > 0).sort((a, b) => b.s - a.s).slice(0, 3);
+  return { qt, hits };
+}
+const esc = s => s.replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+function highlight(text, qt) {
+  const set = new Set(qt);
+  return text.split(/([\p{L}\p{M}\p{N}]+)/u).map(part =>
+    (/^[\p{L}\p{M}\p{N}]+$/u.test(part) && set.has(stem(norm(part)))) ? "<mark>" + esc(part) + "</mark>" : esc(part)
+  ).join("");
+}
+
+const resultsEl = document.getElementById("results");
+const input = document.getElementById("q");
+function run(q) {
+  if (!q.trim()) { resultsEl.innerHTML = ""; return; }
+  const { qt, hits } = search(q);
+  if (!hits.length) {
+    resultsEl.innerHTML = '<p class="note empty">' + esc(UI[lang].none(q)) + '</p>';
+    return;
+  }
+  resultsEl.innerHTML = '<p class="note">' + UI[lang].count(hits.length) + '</p>' +
+    hits.map(h => '<div class="result"><span class="src">' + esc(h.d.src) + '</span><p>' + highlight(h.d.text, qt) + '</p></div>').join("");
+}
+document.getElementById("ask-form").addEventListener("submit", e => { e.preventDefault(); run(input.value); });
+input.addEventListener("search", () => run(input.value));
+
+/* ---- Rendu par langue ---- */
+const ghUrl = GITHUB_USER ? "https://github.com/" + GITHUB_USER : "";
+["gh-hero", "gh-contact"].forEach(id => {
+  const a = document.getElementById(id);
+  if (ghUrl) { a.href = ghUrl; a.hidden = false; }
+});
+
+function renderProjects() {
+  const el = document.getElementById("projects");
+  el.innerHTML = "";
+  PROJECTS.forEach(p => {
+    const art = document.createElement("article");
+    art.className = "project" + (p.featured ? " featured" : "");
+    const links = (GITHUB_USER && p.repo)
+      ? '<div class="links"><a href="https://github.com/' + GITHUB_USER + '/' + p.repo + '">' + UI[lang].repo_link + '</a></div>' : "";
+    art.innerHTML =
+      '<div class="meta">' + p.meta[lang] + '</div>' +
+      '<div>' + (p.status ? '<span class="status">' + p.status[lang] + '</span>' : '') +
+      '<h3>' + p.title[lang] + '</h3><p>' + p.text[lang] + '</p>' +
+      '<ul class="tags">' + p.tags.map(t => '<li>' + t + '</li>').join("") + '</ul>' + links + '</div>';
+    el.appendChild(art);
+  });
+}
+function renderSkills() {
+  document.getElementById("skills").innerHTML =
+    SKILLS.map(s => '<dt>' + s.dt[lang] + '</dt><dd>' + s.dd[lang] + '</dd>').join("");
+}
+function renderRows() {
+  document.getElementById("rows").innerHTML =
+    ROWS.map(r => '<div class="row"><div class="when">' + r.when[lang] + '</div><div>' + r.html[lang] + '</div></div>').join("");
+}
+function renderChips() {
+  const el = document.getElementById("chips");
+  el.innerHTML = "";
+  UI[lang].chips.forEach(label => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = label;
+    b.addEventListener("click", () => { input.value = label; run(label); });
+    el.appendChild(b);
+  });
+}
+
+function effectiveTheme() {
+  const a = root.getAttribute("data-theme");
+  if (a === "dark" || a === "light") return a;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+function updateThemeLabel() {
+  document.getElementById("theme").textContent = effectiveTheme() === "dark" ? UI[lang].theme_light : UI[lang].theme_dark;
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const next = effectiveTheme() === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  store.set("pf-theme", next);
+  updateThemeLabel();
+});
+try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeLabel); } catch (e) {}
+
+function applyLang(l) {
+  lang = UI[l] ? l : "fr";
+  root.lang = lang;
+  root.dir = lang === "ar" ? "rtl" : "ltr";
+  document.title = UI[lang].title;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute("content", UI[lang].desc);
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = UI[lang][el.dataset.i18n]; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = UI[lang][el.dataset.i18nPh]; });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", UI[lang][el.dataset.i18nAria]); });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"));
+  renderProjects(); renderSkills(); renderRows(); renderChips();
+  buildDocs();
+  updateThemeLabel();
+  run(input.value);
+}
+document.querySelectorAll(".langs button").forEach(b =>
+  b.addEventListener("click", () => { store.set("pf-lang", b.dataset.lang); applyLang(b.dataset.lang); }));
+
+/* ---- Démarrage : préférences enregistrées, sinon français et thème du système ---- */
+const savedTheme = store.get("pf-theme");
+if (savedTheme === "dark" || savedTheme === "light") root.setAttribute("data-theme", savedTheme);
+const urlLang = new URLSearchParams(location.search).get("lang");
+applyLang(urlLang && UI[urlLang] ? urlLang : (store.get("pf-lang") || "fr"));
+</script>
+</body>
+</html>
